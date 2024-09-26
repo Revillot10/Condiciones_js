@@ -1,0 +1,295 @@
+.main_container {
+    display: grid;
+    padding: 0;
+    grid-template-rows: 1fr 1fr 7fr 1fr;
+    grid-template-areas: 
+        'navbar'    
+        'filters'
+        'gallery'
+        'footer';
+    height: 100vh;
+    width: 100%;
+}
+
+.navbar {
+    display: flex;    
+    flex-direction: row; 
+    align-items: center;  
+    justify-content: space-between;
+    grid-area: navbar;
+    padding: 0; 
+    background-color:  darkgray; 
+    color: #8B0000; 
+}
+
+.navbar-brand {
+    display: flex; /* Usa flexbox para alinear el ícono y el texto */
+    align-items: center; /* Alinea verticalmente el ícono y el texto */
+    font-size: 1.5rem; 
+    font-weight: bold; 
+    margin-bottom: 1rem;  
+    margin: 10px;
+
+}
+
+.navbar-brand i {
+    margin-right: 0.5rem; /* Espacio entre el ícono y el texto */
+    font-size: 1.5rem; /* Tamaño del ícono (ajustar según sea necesario) */
+}
+
+.navbar-menu {
+    display: none; 
+}
+
+.navbar-toggle {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    cursor: pointer;
+}
+
+.navbar-toggle .bar {
+    width: 30px;
+    height: 3px;
+    background-color:white; 
+    margin: 3px ;
+    border: 10px;
+}
+
+.filters {
+    background-color:  darkgray; 
+    padding: 0.5rem; 
+    grid-area: filters;
+}
+
+.filters form {
+    display: flex;
+    flex-direction: column;
+}
+
+.filters label {
+    text-align: left;
+    color: #8B0000;
+    font-weight: #8B0000;
+}
+
+.filters select {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+    grid-area: gallery;    
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    justify-content: space-between; 
+    padding: 10px; 
+    margin: 20px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 250px; 
+    height: 400px;
+}
+
+.card:hover {
+    box-shadow: 0 6px 6px  rgba(0, 0, 0, 0.666);
+}
+
+.card img {
+    width: 100%; 
+    height: 250px; 
+    max-height: 250px; 
+    object-fit: cover; 
+}
+
+.card h3, .card p {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #8B0000;
+    width: 100%; 
+}
+
+.card h3 {
+    margin-bottom: 0px; 
+}
+
+.card p {
+    margin-top: 0; 
+}
+
+.btn-comprar {
+    background-color:  darkgray;
+    color: white;
+    width: 100%; 
+    border: 1px solid  rgba(0, 0, 0, 0.666);
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.footer {
+    background-color: rgba(0, 0, 0, 0.666);
+    color: white;
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row; 
+    padding: 0px;
+}
+
+.footer .social-icons {
+    display: flex; 
+    justify-content: center; 
+    padding: 0px; 
+    gap: 10px; 
+}
+
+.footer .social-icon {
+    color: white; 
+    font-size: 24px; 
+    text-decoration: none; 
+}
+
+.footer .social-icon:hover {
+    color: #007bff; 
+}
+
+.contact-form {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin: 0.1rem 0rem; 
+    padding: 0.3rem; /* Espacio interno para reducir la altura total del formulario */
+}
+
+.contact-form input {
+    padding: 0.3rem; 
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.25rem; /* Tamaño de fuente más pequeño */
+    font-weight: bold; /* Estilo de texto en negrita */
+    color: #333;
+    width: 90%; /* Ancho del campo de entrada en pantallas pequeñas */
+    max-width: 300px; /* Ancho máximo del campo de entrada */
+    box-sizing: border-box; /* Asegura que el padding no aumente el tamaño total del input */
+}
+
+.contact-form input::placeholder {
+    color: #999; 
+}
+
+/* Estilo para pantallas de 576px o más */
+@media (min-width: 576px) {
+    .main_container {
+        display: grid;
+        padding: 0;
+        grid-template-columns: 1fr 5fr;
+        grid-template-rows: 10fr 80fr 10fr;
+        grid-template-areas: 
+            'navbar filters'    
+            'navbar gallery'
+            'footer gallery';
+        height: 100vh;
+    }
+
+    .navbar {
+        display: flex;
+        flex-direction: column; 
+        align-items: flex-start; 
+        justify-content: flex-start;
+        grid-area: navbar;
+        padding: 0; 
+        background-color: darkgray; 
+    }
+
+    .footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row; 
+        grid-area: footer;
+        color: white;
+        padding: 0px;
+    }
+
+    .gallery {
+        display: flex;
+        flex-wrap: wrap; 
+        gap: 10px;
+        grid-area: gallery;
+        background-color: white;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    .filters {
+        grid-area: filters;
+        background-color:  darkgray; 
+        padding: 0.5rem; 
+    }
+    .navbar-menu {
+        display: flex;    
+        flex-direction: column; 
+        list-style: none; 
+        margin: 10px; 
+        padding: 0; 
+        width: 100%; 
+    }
+    
+    .navbar-brand {
+        font-size: 1.5rem; 
+        font-weight: bold; 
+        margin-bottom: 1rem;  
+        margin: 10px;
+    }
+
+    .navbar-menu li {
+        margin-bottom: 1rem; 
+    }
+    
+    .navbar-menu a {
+        color: white;
+        text-decoration: none; 
+        font-size: 1rem; 
+    }
+    
+    .navbar-menu a:hover {
+        text-decoration: underline; 
+    }
+
+    .navbar-toggle {
+        display: none;
+    }
+
+    .contact-form {
+        width: auto; /* Ajusta el ancho automáticamente en pantallas más grandes */
+        margin: 0.1rem 0rem; /* Mayor espacio vertical en pantallas grandes */
+        padding: 0.3rem; /* Espacio interno para reducir la altura total del formulario */
+    }
+
+    .contact-form input {
+        width: 90%; /* Ancho del campo de entrada en pantallas grandes */
+        max-width: 400px; /* Ancho máximo del campo de entrada */
+        padding: 0.7rem; 
+        border: 1px solid #ccc;
+        border-radius: 1px;
+        font-size: 0.7rem; /* Tamaño de fuente más pequeño */
+        box-sizing: border-box; /* Asegura que el padding no aumente el tamaño total del input */
+    }
+
+}
