@@ -3,82 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Commerce</title>    
+    <title>Condiciones</title>    
     <link rel="stylesheet" href="./assets/css/styles.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
 </head>
 
-<body>   
-    <div class="main_container">         
-        
-        <aside class="filters">
-            <form>
-                <label for="category">Ordenar por:</label>
-                <select id="category" name="category">
-                    <option value="Todo">Todos</option>
-                    <option value="perfumes">Perfumes</option>
-                    <option value="Ropa">Ropa</option>
-                    <option value="Acce">Accesorios</option>
-                    <option value="Zapatos">Zapatos</option>
-                </select>
-            </form>
-        </aside>
-
-        <nav class="navbar">
-            <div class="navbar-brand">
-                <i class="fas fa-shopping-cart"></i> E-Commerce
-            </div>           
-            
-            <div class="navbar-toggle">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+<body>      
+    <div class="container">
+        <section class="parte-1">
+            <img id="sticker-logo" src="./assets/img/Football.png" alt="Logo">
+        </section>
+        <hr>
+        <section class="parte-2">
+            <h3>Escoje los stickers</h3>
+            <div class="cards">
+                <div class="card">
+                    <img src="./assets/img/Messi.jpg">
+                    <p>Pack de House of Drágon</p>
+                    <input id="card-1" type="number" min="0" max="10" value="0" step="1">
+                </div>
+                <div class="card">
+                    <img src="./assets/img/Ronaldo.jpg">
+                    <p>Pack de Stickers House of Drágon 2</p>
+                    <input id="card-2" type="number" min="0" max="10" value="0" step="1">
+                </div>
+                <div class="card">
+                    <img src="./assets/img/Haland.jpg">
+                    <p>Pack de Stickers House of Drágon 3</p>
+                    <input id="card-3" type="number" min="0" max="10" value="0" step="1">
+                </div>
             </div>
-            <ul class="navbar-menu">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#catalogo">Catálogo</a></li>
-                <li><a href="#oferta">Oferta</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>        
+            <p id="txt-verificar"></p>
+            <button id="btn-verificar">Verificar</button>
+        </section>
+       
+      <footer>
+        <p>
+          © 2024 David Revillot 
+        </p>
+      </footer> 
+    
+        <script src="./assets/js/script.js">  </script>
 
 
-        <div class="gallery">
-            <div class="card">
-                <img src="./assets/img/Perfume.jpg" alt="Zapatillas"/>
-                <h3>Perfume</h3>
-                <p> Valor: $
-                    <span id="total"></span></p>
 
-                <p>Cantidad:
-                    <span id="cantidad"></span>
-                </p>   
-
-                <div class="botones">
-                    <button id="sumar">+</button>    
-                    <button id="restar">-</button> 
-                </div>            
-
-                <button id="btn-comprar">Comprar</button>           
-            </div>  
-        </div>    
-        
-        <div class="footer">
-            <div class="social-icons">
-                <a href="https://www.facebook.com" target="_blank" class="social-icon">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="https://www.instagram.com" target="_blank" class="social-icon">
-                    <i class="fab fa-instagram"></i>
-                </a>
-            </div>
-            <form class="contact-form">
-                <input type="text" placeholder="Contáctanos" />
-            </form>
-        </div>
-     
-    </div>   
-    <script src="./assets/js/script.js"></script>
 </body>
 </html>            
 
