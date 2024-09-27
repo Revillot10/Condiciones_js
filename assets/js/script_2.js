@@ -43,21 +43,6 @@ document.addEventListener("click", (e) => {
             return false; 
         }
     }
-
-    // Parte 3 verificación password
-    if (e.target.id == "btn-ingresar") {
-        const digito0 = document.getElementById("digito-0").value;
-        const digito1 = document.getElementById("digito-1").value;
-        const digito2 = document.getElementById("digito-2").value;
-        const password = Number(digito0 + digito1 + digito2); // concatena 
-
-        const mensaje = document.getElementById("txt-password"); // comparar contraseña ingresada con valor correcto
-        password === 911
-            ? (mensaje.innerHTML = "Password 1 correcto") // mensaje correcto
-            : password === 714
-            ? (mensaje.innerHTML = "Password 2 correcto")
-            : (mensaje.innerHTML = "Password Incorrecto!"); // mensaje incorrecto
-    }
 });
 
 
